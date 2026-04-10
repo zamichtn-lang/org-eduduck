@@ -2,32 +2,156 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>PEP COCKPIT | BACTN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISC - Global Infrastructure</title>
     <style>
-        body { background-color: #F5F5F5; font-family: 'Segoe UI', monospace; padding: 40px; color: #1A1A1A; }
-        .cockpit { max-width: 800px; margin: auto; border: 3px solid #000; background: #FFF; padding: 30px; }
-        .header { border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 25px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .box { border: 1px solid #EEE; padding: 15px; background: #FAFAFA; border-left: 5px solid #000; }
-        .label { font-size: 11px; color: #888; text-transform: uppercase; }
-        .data { font-size: 18px; font-weight: bold; margin-top: 5px; }
-        .btn { display: block; width: 100%; padding: 15px; background: #000; color: #FFF; text-align: center; text-decoration: none; margin-top: 30px; font-weight: bold; }
+        /* Charte Prestige : Gris Perle & Cyan Xénon */
+        :root {
+            --gris-perle: #E5E4E2;
+            --anthracite: #36454F;
+            --cyan-xenon: #00FFFF;
+            --white: #FFFFFF;
+        }
+
+        body { 
+            background-color: var(--gris-perle); 
+            color: var(--anthracite); 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+
+        /* Hiérarchie des Logos - Zone Header */
+        .header { text-align: center; margin-bottom: 50px; }
+        
+        .logo-gp { 
+            width: 180px; 
+            margin-bottom: 10px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .sub-logos { 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            margin-top: 25px; 
+            border-top: 1px solid rgba(54, 69, 79, 0.2);
+            padding-top: 25px;
+        }
+
+        .logo-unit { 
+            width: 110px; 
+            height: auto;
+            transition: transform 0.3s ease; 
+        }
+        
+        .logo-unit:hover { transform: scale(1.1); }
+
+        /* Contenu SISC */
+        h1 { 
+            color: var(--anthracite); 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            margin: 15px 0 5px 0;
+            font-size: 2.2em;
+        }
+        
+        .slogan { 
+            font-style: italic; 
+            color: var(--anthracite); 
+            font-weight: 300; 
+            margin-bottom: 20px;
+        }
+
+        /* Cartes de contenu */
+        .card { 
+            background: var(--white); 
+            padding: 25px; 
+            margin: 25px 0; 
+            border-left: 5px solid var(--cyan-xenon);
+            border-radius: 4px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+        }
+
+        .card h2 { 
+            margin-top: 0; 
+            color: var(--anthracite); 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        /* Navigation Vitrine (Boutons) */
+        .links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-top: 45px; 
+            flex-wrap: wrap; 
+        }
+        
+        .btn { 
+            padding: 14px 30px; 
+            text-decoration: none; 
+            background: var(--anthracite); 
+            color: var(--cyan-xenon); 
+            border-radius: 4px; 
+            font-weight: bold; 
+            transition: all 0.3s ease;
+            border: 1px solid var(--anthracite);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover { 
+            background: var(--cyan-xenon); 
+            color: var(--anthracite); 
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        footer { 
+            text-align: center; 
+            margin-top: 60px; 
+            font-size: 0.85em; 
+            opacity: 0.7;
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="cockpit">
+    <div class="container">
         <div class="header">
-            <div style="font-size: 12px;">SISC ARCHITECTURE | PEP.ORG-EDUDUCK.DUCKDNS.ORG</div>
-            <h1 style="margin: 5px 0;">PILOT EXAM PREPARING (PEP)</h1>
-            <div style="font-size: 14px; color: #666;">CORPUS NATIONAL : BACTN (1891-2025)</div>
+            <img src="img/sisc.png" alt="Logo GP" class="logo-gp">
+            <h1>SISC INFRASTRUCTURE</h1>
+            <p class="slogan">"Sharing is Caring"</p>
+
+            <div class="sub-logos">
+                <img src="img/PeP.jpg" alt="PilotExamPreparing" class="logo-unit">
+                <img src="img/deposit.png" alt="SmartSharingDeposit" class="logo-unit">
+            </div>
         </div>
-        <div class="grid">
-            <div class="box"><div class="label">Module Actif</div><div class="data">MATHÉMATIQUES</div></div>
-            <div class="box"><div class="label">Souveraineté</div><div class="data">ORG-EDUDUCK</div></div>
-            <div class="box"><div class="label">Statut Archive</div><div class="data">134 ANS D'HISTOIRE</div></div>
-            <div class="box"><div class="label">Architecte</div><div class="data">KN</div></div>
+
+        <div class="card">
+            <h2>L'Esprit du Groupe</h2>
+            <p>Fidèles aux directives de 1963, nous considérons l'échange de savoir non comme un simple outil utilitaire, mais comme un véritable <strong>facteur de culture</strong> et un stimulant pour l'innovation technologique.</p>
         </div>
-        <a href="#" class="btn">LANCER LE SÉLECTEUR DE NOTIONS (1891-2025)</a>
+
+        <div class="card">
+            <h2>Écosystème PEP & SmartSharing</h2>
+            <p>De l'archivage rigoureux du patrimoine éducatif tunisien à la mise en place de protocoles de dépôt distribués, notre infrastructure unifie l'histoire et le futur du partage numérique.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.facebook.com/pilotExamPreparingTunisie/" target="_blank" class="btn">🚀 PILOT EXAM PREPARING</a>
+            <a href="https://www.facebook.com/SmartSharingDepositTunisie" target="_blank" class="btn">🤝 SMART SHARING DEPOSIT</a>
+        </div>
+
+        <footer>
+            &copy; 2026 SISC Infrastructure | www.mytn.my.to | Node: Tunisia-Main-01
+        </footer>
     </div>
 </body>
 </html>
